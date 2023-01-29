@@ -73,6 +73,7 @@ Things you may want to cover:
 | street           | string     | null: false, foreign_key: true |
 | building_name    | string     | null: true, foreign_key: true  |
 | phone_number     | string     | null: false, foreign_key: true |
+| order_id         | string     | null: false, foreign_key: true |
 
 
 ### Association
@@ -90,5 +91,5 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- belongs_to :item
+- has_one :item
 - has_one :address
