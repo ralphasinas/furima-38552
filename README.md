@@ -49,11 +49,11 @@ Things you may want to cover:
 | ------           | --------- | -----------                    |
 | name             | string    | null: false                    |
 | detail           | text      | null: false                    |
-| category_id      | integer   | null: false, foreign_key: true |
-| condition_id     | integer   | null: false, foreign_key: true |
-| shipping_fee_id  | integer   | null: false, foreign_key: true |
-| shipping_area_id | integer   | null: false, foreign_key: true |
-| shipping_day_id  | integer   | null: false, foreign_key: true |
+| category_id      | reference | null: false, foreign_key: true |
+| condition_id     | reference | null: false, foreign_key: true |
+| shipping_fee_id  | reference | null: false, foreign_key: true |
+| shipping_area_id | reference | null: false, foreign_key: true |
+| shipping_day_id  | reference | null: false, foreign_key: true |
 | price            | integer   | null: false                    |
 | user_id          | string    | null: false, foreign_key: true |
 
@@ -61,24 +61,24 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- belongs_to :order
+- has_one :order
 
 ## address テーブル
 
 | Column           | Type       | Options                        |
 | -------          | ---------- | ------------------------------ |
 | postal_code      | string     | null: false                    |
-| shipping_area_id | integer    | null: false, foreign_key: true |
-| city             | string     | null: false, foreign_key: true |
-| street           | string     | null: false, foreign_key: true |
-| building_name    | string     | null: true, foreign_key: true  |
-| phone_number     | string     | null: false, foreign_key: true |
+| shipping_area_id | reference  | null: false |
+| city             | reference  | null: false |
+| street           | reference  | null: false |
+| building_name    | reference  | null: true, |
+| phone_number     | reference  | null: false |
 | order_id         | string     | null: false, foreign_key: true |
 
 
 ### Association
 
-- has_one :order
+- belongs_to :order
 
 ## orders テーブル
 
@@ -91,5 +91,5 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- has_one :item
+- belongs_to :item
 - has_one :address
