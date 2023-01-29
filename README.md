@@ -40,53 +40,55 @@ Things you may want to cover:
 ### Association
 
 - has_many :items dependent: :destroy
-- has_one :address dependent: :destroy
+- has_many :orders dependent: :destroy
+
 
 ## items テーブル
 
-| Column         | Type      | Options                        |
-| ------         | --------- | -----------                    |
-| name           | string    | null: false                    |
-| detail         | text      | null: false                    |
-| category_id    | integer   | null: false, foreign_key: true |
-| condition_id   | integer   | null: false, foreign_key: true |
-| shipping_fee   | integer   | null: false, foreign_key: true |
-| shipping_area  | integer   | null: false, foreign_key: true |
-| shipping_days  | integer   | null: false, foreign_key: true |
-| price          | integer   | null: false                    |
-| user_id        | string    | null: false, foreign_key: true |
+| Column           | Type      | Options                        |
+| ------           | --------- | -----------                    |
+| name             | string    | null: false                    |
+| detail           | text      | null: false                    |
+| category_id      | integer   | null: false, foreign_key: true |
+| condition_id     | integer   | null: false, foreign_key: true |
+| shipping_fee_id  | integer   | null: false, foreign_key: true |
+| shipping_area_id | integer   | null: false, foreign_key: true |
+| shipping_day_id  | integer   | null: false, foreign_key: true |
+| price            | integer   | null: false                    |
+| user_id          | string    | null: false, foreign_key: true |
 
 
 ### Association
 
 - belongs_to :user
+- belongs_to :order
 
 ## address テーブル
 
-| Column        | Type       | Options                        |
-| -------       | ---------- | ------------------------------ |
-| postal_code   | string     | null: false                    |
-| shipping_area | integer    | null: false, foreign_key: true |
-| city          | string     | null: false                    |
-| street        | string     | null: false                    |
-| building_name | string     | null: true                     |
-| phone_number  | string     | null: false                    |
+| Column           | Type       | Options                        |
+| -------          | ---------- | ------------------------------ |
+| postal_code      | string     | null: false                    |
+| shipping_area_id | integer    | null: false, foreign_key: true |
+| city             | string     | null: false, foreign_key: true |
+| street           | string     | null: false, foreign_key: true |
+| building_name    | string     | null: true, foreign_key: true  |
+| phone_number     | string     | null: false, foreign_key: true |
 
 
 ### Association
 
-- belongs_to :user
-
+- has_one :order
 
 ## orders テーブル
 
 | Column        | Type       | Options                        |
 | -------       | ---------- | ------------------------------ |
 | item_id       | string     | null: false, foreign_key: true |
-| user_id       | string    | null: false, foreign_key: true |
+| user_id       | string     | null: false, foreign_key: true |
 
 
 ### Association
 
 - belongs_to :user
-- has_one :item
+- belongs_to :item
+- has_one :address
