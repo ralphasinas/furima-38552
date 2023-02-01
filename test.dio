@@ -427,9 +427,6 @@
                 <mxCell id="306" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;" edge="1" parent="1" source="216" target="283">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="307" style="edgeStyle=none;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;" edge="1" parent="1" source="163" target="273">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
