@@ -49,13 +49,13 @@ Things you may want to cover:
 | ------           | --------- | -----------                    |
 | name             | string    | null: false                    |
 | detail           | text      | null: false                    |
-| category_id      | reference | null: false, foreign_key: true |
-| condition_id     | reference | null: false, foreign_key: true |
-| shipping_fee_id  | reference | null: false, foreign_key: true |
-| shipping_area_id | reference | null: false, foreign_key: true |
-| shipping_day_id  | reference | null: false, foreign_key: true |
+| category_id      | integer   | null: false,                   |
+| condition_id     | integer   | null: false,                   |
+| shipping_fee_id  | integer   | null: false,                   |
+| shipping_area_id | integer   | null: false,                   |
+| shipping_day_id  | integer   | null: false,                   |
 | price            | integer   | null: false                    |
-| user_id          | string    | null: false, foreign_key: true |
+| user_id          | reference | null: false, foreign_key: true |
 
 
 ### Association
@@ -68,12 +68,12 @@ Things you may want to cover:
 | Column           | Type       | Options                        |
 | -------          | ---------- | ------------------------------ |
 | postal_code      | string     | null: false                    |
-| shipping_area_id | reference  | null: false |
-| city             | reference  | null: false |
-| street           | reference  | null: false |
-| building_name    | reference  | null: true, |
-| phone_number     | reference  | null: false |
-| order_id         | string     | null: false, foreign_key: true |
+| shipping_area_id | integer    | null: false                    |
+| city             | integer    | null: false                    |
+| street           | integer    | null: false                    |
+| building_name    | string     |                                |
+| phone_number     | string     | null: false                    |
+| order_id         | reference  | null: false, foreign_key: true |
 
 
 ### Association
@@ -84,8 +84,8 @@ Things you may want to cover:
 
 | Column        | Type       | Options                        |
 | -------       | ---------- | ------------------------------ |
-| item_id       | string     | null: false, foreign_key: true |
-| user_id       | string     | null: false, foreign_key: true |
+| item_id       | reference  | null: false, foreign_key: true |
+| user_id       | reference  | null: false, foreign_key: true |
 
 
 ### Association
