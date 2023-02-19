@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   belongs_to :user
-  has_one :order
+  #has_one :order
 
   has_one_attached :image
   
@@ -22,8 +22,8 @@ class Item < ApplicationRecord
     validates :shipping_area_id, numericality: { other_than: 1 , message: "can't be blank"}
     validates :shipping_day_id, numericality: { other_than: 1 , message: "can't be blank"}
     # 300円以上かつ9,999,999円以下で、半角数字でないと入力不可
-    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
-    validates :user
+    validates :price, numericality: {only_integer: true, message: 'Half-width number'}
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range"}
   end
 
 end
