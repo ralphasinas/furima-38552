@@ -23,10 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    if @item.user_id == current_user.id
-    else
-      redirect_to root_path
-    end
+    
   end
 
   def update
@@ -38,12 +35,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.user_id == current_user.id
       @item.destroy
       redirect_to root_path
-    else
-      redirect_to root_path
-    end
   end
 
   private
@@ -55,5 +48,12 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def authorize_owner
+    if @item.user_id == current_user.id
+    else
+      redirect_to root_path
+    end
   end
 end
