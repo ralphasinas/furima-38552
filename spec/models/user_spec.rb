@@ -47,7 +47,7 @@ RSpec.describe User, type: :model do
       it 'メールアドレスに@が含まれていない場合保存できない' do
         @user.email = 'testgmail.com'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email is invalid")
+        expect(@user.errors.full_messages).to include('Email is invalid')
       end
       it 'メールアドレスがすでに登録しているユーザーと重複していると保存できない' do
         @user.save
@@ -89,7 +89,7 @@ RSpec.describe User, type: :model do
         @user.password = '山田123456'
         @user.password_confirmation = '山田123456'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is invalid. Include both letters and numbers")
+        expect(@user.errors.full_messages).to include('Password is invalid. Include both letters and numbers')
       end
       it 'パスワード（確認）が空欄だと保存できない' do
         @user.password = '123abc'
