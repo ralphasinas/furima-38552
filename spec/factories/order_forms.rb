@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :order_form do
-    user_id { Faker::Number.non_zero_digit }
-    item_id { Faker::Number.non_zero_digit }
+    user_id { 1 }
+    item_id { 1 }
     postcode { Faker::Number.decimal_part(digits: 3) + '-' + Faker::Number.decimal_part(digits: 4) }
     shipping_area { Faker::Number.between(from: 1, to: 47) }
     city { Faker::Address.city }

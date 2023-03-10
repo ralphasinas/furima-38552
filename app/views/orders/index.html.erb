@@ -41,16 +41,18 @@
         クレジットカード情報入力
       </h1>
       <label for="number">カード番号</label>
-      <div id='number' class="payjs-outer form-wrap">
+      <div id='number' class="input-default">
         <%# ここにフォームが生成されます %>
       </div>
-      <label for="cvc">CVC</label>
-      <div id='cvc' class="payjs-outer form-wrap">
-        <%# ここにフォームが生成されます %>
-      </div>
+      
       <label for="exp-date">有効期限</label>
-      <div id='exp-date' class="payjs-outer form-wrap">
+      <div id='exp-date' class="input-expiration-date">
       <%# ここにフォームが生成されます %>
+      </div>
+
+      <label for="cvc">CVC</label>
+      <div id='cvc' class="input-default">
+        <%# ここにフォームが生成されます %>
       </div>
     </div>
     <%# /カード情報の入力 %>
