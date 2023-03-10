@@ -63,7 +63,7 @@ Things you may want to cover:
 - belongs_to :user
 - has_one :order
 
-## address テーブル
+## payment テーブル
 
 | Column           | Type       | Options                        |
 | -------          | ---------- | ------------------------------ |
